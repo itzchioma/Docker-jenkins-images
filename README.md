@@ -1,5 +1,5 @@
 ## Jenkins CI/CD Pipeline for Building and Pushing Docker Images of a Simple Hello World API Implemented in FastAPI to Docker Hub
-###  In this tutorial, we will guide you through the process of setting up a Jenkins CI/CD pipeline to automate the building and pushing of Docker images to Docker Hub. We will use a simple FastAPI “Hello World” application as our example code.
++ In this tutorial, we will guide you through the process of setting up a Jenkins CI/CD pipeline to automate the building and pushing of Docker images to Docker Hub. We will use a simple FastAPI “Hello World” application as our example code.
 
 #### Requirements
 +  Jenkins Installed on EC2: Jenkins should be installed and running on your EC2 instance. You can access Jenkins through the web interface.
