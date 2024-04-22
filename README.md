@@ -16,7 +16,7 @@ sudo apt update
 sudo apt install fontconfig openjdk-17-jre
 java -version
 ```
-<1--Now, you need to execute the following commands to install Jenkins -->
+<!--Now, you need to execute the following commands to install Jenkins -->
 <!-- Installing Jenkins via command line -->
 ```bash
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
