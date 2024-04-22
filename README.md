@@ -35,17 +35,17 @@ sudo apt-get install jenkins
  sudo systemctl status jenkins
  ```
 
- ### In the AWS console, edit the inbound rules for the security group and add the rules as depicted in the image below.
+ + In the AWS console, edit the inbound rules for the security group and add the rules as depicted in the image below.
 
- ### After setting up the server, you can access your application by entering the IP address followed by the port number,like this:http://your_ip_address:8080 you will find this window
+ + After setting up the server, you can access your application by entering the IP address followed by the port number,like this:http://your_ip_address:8080 you will find this window
 
- ### in consloe you past this like as show below
+ + in consloe you past this like as show below
 
- ### after will redirect this page
+ + after will redirect this page
 
- ### Now, to successfully access the Jenkins homepage
+ + Now, to successfully access the Jenkins homepage
 
- ### Docker Installed on Jenkins Server:Ensure that Docker is installed on the Jenkins server. You can use the official Docker installation instructions for your Linux distribution.
+ + Docker Installed on Jenkins Server:Ensure that Docker is installed on the Jenkins server. You can use the official Docker installation instructions for your Linux distribution.
 
  ```bash
 sudo apt update
@@ -56,12 +56,12 @@ sudo apt update
 sudo apt install -y docker-ce docker-ce-cli containerd.io 
 ```
 
-### Docker Hub Account:Create an account on Docker Hub if you don’t have one. Visit the Docker Hub Website: Open your web browser and go to the Docker Hub website: https://hub.docker.com/ Click on “Sign Up”: Locate the “Sign Up” button on the top right corner of the page and click on it. Fill in Registration Details:Enter a valid email address.Choose a username for your Docker Hub account.Create a strong password. Create repo with test.
++ Docker Hub Account:Create an account on Docker Hub if you don’t have one. Visit the Docker Hub Website: Open your web browser and go to the Docker Hub website: https://hub.docker.com/ Click on “Sign Up”: Locate the “Sign Up” button on the top right corner of the page and click on it. Fill in Registration Details:Enter a valid email address.Choose a username for your Docker Hub account.Create a strong password. Create repo with test.
 
-### Dockerfile in Your GitHub Repository:Your GitHub repository should contain a Dockerfile in the root directory. This Dockerfile defines the instructions for building your Docker image.
++ Dockerfile in Your GitHub Repository:Your GitHub repository should contain a Dockerfile in the root directory. This Dockerfile defines the instructions for building your Docker image.
 
-### This is my repository; you can check it 
++ This is my repository; you can check it 
 
-### Here, I am building a Docker image for FastAPI this my Dockerfile
++ Here, I am building a Docker image for FastAPI this my Dockerfile
 
-### Jenkins Pipeline Configuration:Configure a Jenkins pipeline with the provided Jenkinsfile. Adjust the placeholders in the Jenkinsfile, such as repository URL, Docker Hub credentials, etc.
++ Jenkins Pipeline Configuration:Configure a Jenkins pipeline with the provided Jenkinsfile. Adjust the placeholders in the Jenkinsfile, such as repository URL, Docker Hub credentials, etc.
