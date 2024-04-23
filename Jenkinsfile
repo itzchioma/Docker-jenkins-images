@@ -8,7 +8,7 @@ node {
 
     stage('Build image') {
   
-       app = docker.build("itzoma2810/test")
+       app = docker.build("itzoma10/test")
     }
 
     stage('Test image') {
