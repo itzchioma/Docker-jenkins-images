@@ -65,3 +65,23 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io
 + Here, I am building a Docker image for FastAPI this my Dockerfile
 
 + Jenkins Pipeline Configuration:Configure a Jenkins pipeline with the provided Jenkinsfile. Adjust the placeholders in the Jenkinsfile, such as repository URL, Docker Hub credentials, etc.
++ Webhook or Polling Setup: Set up a webhook in your GitHub repository to trigger the Jenkins pipeline on code changes. Alternatively, you can configure Jenkins to poll your repository for changes.
++ Payload URL: publicIP with port and in trigger in webhook select pull request, pushes.
++ Docker Hub Credentials in Jenkins:In Jenkins, set up Docker Hub credentials. Go to “Jenkins” > “Manage Jenkins” > “Manage Credentials” > “(select your domain)” > “(select your credentials)”.
++ Now, you’ve added Docker Hub credentials to Jenkins. with username and password.
++ Jenkins Plugins:Ensure that the necessary Jenkins plugins are installed. You may need plugins related to Docker integration and pipeline execution. Install them via the Jenkins web interface under “Manage Jenkins” > “Manage Plugins.”
++ I already installed all plugins you check here.
++ In Manage Jenkins you can add JDK installations and Git installations , Docker installations
+
+## Note:
++ Internet Access from Jenkins Server:Ensure that the Jenkins server has internet access to pull Docker images and push to Docker Hub.
++ GitHub Integration:Jenkins should be able to access your GitHub repository. If it's a private repository, make sure to set up the necessary credentials or SSH keys.
++ EC2 Security Group Configuration:Ensure that the security group associated with your EC2 instance allows traffic on the necessary ports for Jenkins and Docker.
+
+## Jenkins Dashboard
++ In Dashboard page Now, click on the ‘New Item’ option located at the top left
++ Click on ‘Give Item Name,’ select ‘Pipeline,’ and click ‘OK
++ In the description, add your description, and in Build Triggers, select ‘GitHub hook trigger for GITScm polling.
++ In the pipeline section, choose ‘Pipeline script from SCM,’ and under SCM, add the Git Repository URL. Specify your Branch Specifier as blank for ‘any. apply it and save.
++ Build will be triggered automatically as shown in the image below.
+
