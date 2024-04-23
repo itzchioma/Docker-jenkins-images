@@ -6,8 +6,10 @@
 
 #### Setup Ec2 instance
 +  Go to the AWS console and search for the EC2 instance (Ubuntu)
+
 ![Launching-an-instance](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/Launching-an-instance.png)
 +  Ssh into the Instance you created
+  
 ![ssh-instance](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/ssh-instance.png)
   
 
@@ -38,18 +40,22 @@ sudo apt-get install jenkins
  ```
 
  + In the AWS console, edit the inbound rules for the security group and add the rules as depicted in the image below.
+  
 ![Port8080](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/Port8080.png)
 
  + After setting up the server, you can access your application by entering the IP address followed by the port number,like this:http://your_ip_address:8080 you will find this window
 ![Welcome-jenkins](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/Welcome-jenkins.png)
 
  + in consloe you past this like as show below
+
 ![Welcome-jenkins](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/Welcome-jenkins.png)
 
  + after will redirect this page
+  
 ![Jenkins-admin-profile](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/Jenkins-admin-profile.png)
 
  + Now, to successfully access the Jenkins homepage
+  
 ![Jenkins-start-up](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/Jenkins-start-up.png)
 
  + Docker Installed on Jenkins Server:Ensure that Docker is installed on the Jenkins server. You can use the official Docker installation instructions for your Linux distribution.
@@ -74,16 +80,21 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io
 + Jenkins Pipeline Configuration:Configure a Jenkins pipeline with the provided Jenkinsfile. Adjust the placeholders in the Jenkinsfile, such as repository URL, Docker Hub credentials, etc.
 + Webhook or Polling Setup: Set up a webhook in your GitHub repository to trigger the Jenkins pipeline on code changes. Alternatively, you can configure Jenkins to poll your repository for changes.
 + Payload URL: publicIP with port and in trigger in webhook select pull request, pushes.
+
 ![configure-jenkins-webhook](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/configure-jenkins-webhook.png)
 
 + Docker Hub Credentials in Jenkins:In Jenkins, set up Docker Hub credentials. Go to “Jenkins” > “Manage Jenkins” > “Manage Credentials” > “(select your domain)” > “(select your credentials)”.
+
 ![Docker-credential-setup](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/Docker-credential-setup.png)
 
 + Now, you’ve added Docker Hub credentials to Jenkins. with username and password.
+
 ![docker-hub-credentials](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/docker-hub-credentials.png)
 
 + Jenkins Plugins:Ensure that the necessary Jenkins plugins are installed. You may need plugins related to Docker integration and pipeline execution. Install them via the Jenkins web interface under “Manage Jenkins” > “Manage Plugins.”
+  
 ![docker-installed-plugins](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/docker-installed-plugins.png)
+
 + I already installed all plugins you check here.
 + In Manage Jenkins you can add JDK installations and Git installations , Docker installations
 
@@ -94,9 +105,25 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io
 
 ## Jenkins Dashboard
 + In Dashboard page Now, click on the ‘New Item’ option located at the top left
+
 ![Jenkins-start-up](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/Jenkins-start-up.png)
+
 + Click on ‘Give Item Name,’ select ‘Pipeline,’ and click ‘OK
+
+![Jenkins-start-up](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/Jenkins-start-up.png)
+
 + In the description, add your description, and in Build Triggers, select ‘GitHub hook trigger for GITScm polling.
 + In the pipeline section, choose ‘Pipeline script from SCM,’ and under SCM, add the Git Repository URL. Specify your Branch Specifier as blank for ‘any. apply it and save.
 + Build will be triggered automatically as shown in the image below.
 
++ You can observe that all stages have been successfully completed in the image above. Now, navigate to the Docker Hub page, where you will find the image. If you wish to run the image, follow these commands
+But u need to observe one thing that I also implemented the Trigger ManifesrUpdate for this you need to create a another jenkins and deployment.yml file
+repolink : https://github.com/itzchioma/Docker-jenkins-Manifestfile
+
++ It’s a manifest file and I given name as a Docker-jenkins-Manifestfile  and also you have deployment.yaml.
+
++ Create a new Jenkins item named “UpdateManifest”. When the “BuildImage” Jenkins pipeline is triggered, it should also trigger the “UpdateManifest” item to build.
+
++ You can observe that all stages have been successfully completed in the image above. Now, navigate to the Docker Hub page, where you will find the image. If you wish to run the image, follow these commands
+
++ successfully set up a Jenkins CI/CD Pipeline for our projects. This means we can now automatically build and push our software as Docker images to Docker Hub. It’s like having a smart assistant that takes care of the heavy lifting in the development process, making things faster and more reliable. Exciting times ahead for smoother and more efficient development!”
