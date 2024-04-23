@@ -6,7 +6,9 @@
 
 #### Setup Ec2 instance
 +  Go to the AWS console and search for the EC2 instance (Ubuntu)
+![Launching-an-instance](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/Launching-an-instance.png)
 +  Ssh into the Instance you created
+![ssh-instance](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/ssh-instance.png)
   
 
 <!-- Updating the ubuntu server (Prepping the server for configuration) -->
@@ -36,14 +38,19 @@ sudo apt-get install jenkins
  ```
 
  + In the AWS console, edit the inbound rules for the security group and add the rules as depicted in the image below.
+![Port8080](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/Port8080.png)
 
  + After setting up the server, you can access your application by entering the IP address followed by the port number,like this:http://your_ip_address:8080 you will find this window
+![Welcome-jenkins](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/Welcome-jenkins.png)
 
  + in consloe you past this like as show below
+![Welcome-jenkins](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/Welcome-jenkins.png)
 
  + after will redirect this page
+![Jenkins-admin-profile](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/Jenkins-admin-profile.png)
 
  + Now, to successfully access the Jenkins homepage
+![Jenkins-start-up](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/Jenkins-start-up.png)
 
  + Docker Installed on Jenkins Server:Ensure that Docker is installed on the Jenkins server. You can use the official Docker installation instructions for your Linux distribution.
 
@@ -60,16 +67,23 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io
 
 + Dockerfile in Your GitHub Repository:Your GitHub repository should contain a Dockerfile in the root directory. This Dockerfile defines the instructions for building your Docker image.
 
-+ This is my repository; you can check it 
++ This is my repository; you can check it https://github.com/itzchioma/Docker-jenkins-images
 
 + Here, I am building a Docker image for FastAPI this my Dockerfile
 
 + Jenkins Pipeline Configuration:Configure a Jenkins pipeline with the provided Jenkinsfile. Adjust the placeholders in the Jenkinsfile, such as repository URL, Docker Hub credentials, etc.
 + Webhook or Polling Setup: Set up a webhook in your GitHub repository to trigger the Jenkins pipeline on code changes. Alternatively, you can configure Jenkins to poll your repository for changes.
 + Payload URL: publicIP with port and in trigger in webhook select pull request, pushes.
+![configure-jenkins-webhook](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/configure-jenkins-webhook.png)
+
 + Docker Hub Credentials in Jenkins:In Jenkins, set up Docker Hub credentials. Go to “Jenkins” > “Manage Jenkins” > “Manage Credentials” > “(select your domain)” > “(select your credentials)”.
+![Docker-credential-setup](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/Docker-credential-setup.png)
+
 + Now, you’ve added Docker Hub credentials to Jenkins. with username and password.
+![docker-hub-credentials](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/docker-hub-credentials.png)
+
 + Jenkins Plugins:Ensure that the necessary Jenkins plugins are installed. You may need plugins related to Docker integration and pipeline execution. Install them via the Jenkins web interface under “Manage Jenkins” > “Manage Plugins.”
+![docker-installed-plugins](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/docker-installed-plugins.png)
 + I already installed all plugins you check here.
 + In Manage Jenkins you can add JDK installations and Git installations , Docker installations
 
@@ -80,6 +94,7 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io
 
 ## Jenkins Dashboard
 + In Dashboard page Now, click on the ‘New Item’ option located at the top left
+![Jenkins-start-up](https://github.com/itzchioma/Docker-jenkins-images/blob/main/asset/Jenkins-start-up.png)
 + Click on ‘Give Item Name,’ select ‘Pipeline,’ and click ‘OK
 + In the description, add your description, and in Build Triggers, select ‘GitHub hook trigger for GITScm polling.
 + In the pipeline section, choose ‘Pipeline script from SCM,’ and under SCM, add the Git Repository URL. Specify your Branch Specifier as blank for ‘any. apply it and save.
